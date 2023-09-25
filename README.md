@@ -10,7 +10,7 @@ A work day scheduler application. Users can enter information into the textboxes
 
 ## Deployment link:
 
-https://silverfoot42.github.io/work-day-scheduler/
+https://silverfoot42.github.io/Work-Day-Scheduler/
 
 ## Credits
 
