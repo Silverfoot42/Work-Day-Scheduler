@@ -13,12 +13,14 @@ hourX[8] = 17;
 
 $(window).on("load", function () {
     
+  //Adds functionality to the save button to save the text to local storage
     saveBTN.on('click', function () {
       timeBlockId = $(this).closest(".time-block").attr("id");
       var userInput = $(this).siblings(".description").val();
       localStorage.setItem(timeBlockId, userInput);
     });
     
+    //Line 25-122 checks each timeblock to see if it matches the current hour
     var currentHour = dayjs().hour();
     if (currentHour < hourX[0]) {
       $("#hour-9").addClass("future");
@@ -119,6 +121,7 @@ $(window).on("load", function () {
       console.log(currentHour === hourX[8]);
     }
 
+    //Retrieves the saved text on page refresh
     $(".time-block").each(function() {
       var timeID = $(this).attr("id");
       var savedIn = localStorage.getItem(timeID);
@@ -128,6 +131,7 @@ $(window).on("load", function () {
       }
     });
 
+    //Displays the current date
     var today = dayjs();
     $('#currentDay').text(today.format('dddd, MMMM D'));
   });
